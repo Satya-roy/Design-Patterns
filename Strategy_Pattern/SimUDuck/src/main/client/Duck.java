@@ -13,6 +13,12 @@ public abstract class Duck {
     public void swim(){
         System.out.println("I am Duck, I can swim");
     }
+    public void performFly(){
+        flyBehavior.fly();
+    }
+    public void performQuack(){
+        quackBehavior.quack();
+    }
     public void setFlyBehavior(FlyBehavior fb){
         this.flyBehavior = fb;
     }
