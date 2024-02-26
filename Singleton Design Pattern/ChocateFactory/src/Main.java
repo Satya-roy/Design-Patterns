@@ -1,5 +1,6 @@
 import singletonDesignPattern.pattern3.ChocolateBoilerPattern3;
 import singletonDesignPattern.pattern5ThreadSafe.MyThread;
+import singletonDesignPattern.pattern6ThreadSafe.ChocolateBoilerPattern6;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -24,5 +25,11 @@ public class Main {
         } finally {
             if(executorService != null) executorService.shutdown();
         }
+
+        ChocolateBoilerPattern6 instance1 = ChocolateBoilerPattern6.INSTANCE;
+        ChocolateBoilerPattern6 instance2 = ChocolateBoilerPattern6.INSTANCE;
+
+        System.out.println(instance1.hashCode());
+        System.out.println(instance2.hashCode());
     }
 }

@@ -3,6 +3,7 @@ package singletonDesignPattern.pattern5ThreadSafe;
 /**
  * 1. Double-checked locking - use synchronised block
  * 2. After first initialization threads will not access the synchronised block
+ * 3. This implementation can be broken by reflection in java
  */
 
 public class ChocolateBoilerPattern5 {
