@@ -1,5 +1,5 @@
 import singletonDesignPattern.pattern3.ChocolateBoilerPattern3;
-import singletonDesignPattern.pattern4ThreadSafe.MyThread;
+import singletonDesignPattern.pattern5ThreadSafe.MyThread;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -24,6 +24,5 @@ public class Main {
         } finally {
             if(executorService != null) executorService.shutdown();
         }
-
     }
 }
