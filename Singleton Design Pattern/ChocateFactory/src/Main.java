@@ -1,14 +1,29 @@
 import singletonDesignPattern.pattern3.ChocolateBoilerPattern3;
+import singletonDesignPattern.pattern4ThreadSafe.MyThread;
+
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        ChocolateBoilerPattern3 instance1 = ChocolateBoilerPattern3.getInstance();
-        ChocolateBoilerPattern3 instance2 = ChocolateBoilerPattern3.getInstance();
 
-        System.out.println(instance1.hashCode());
-        System.out.println(instance2.hashCode());
+        //multi-threading
+        ExecutorService executorService = null;
+        MyThread myThread = new MyThread();
+
+        try{
+            executorService = Executors.newFixedThreadPool(2);
+            executorService.execute(myThread);
+            executorService.execute(myThread);
+            executorService.execute(myThread);
+        } catch(Exception e) {
+            e.printStackTrace();
+        } finally {
+            if(executorService != null) executorService.shutdown();
+        }
+
     }
 }
