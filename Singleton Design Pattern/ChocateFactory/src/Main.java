@@ -28,8 +28,13 @@ public class Main {
 
         ChocolateBoilerPattern6 instance1 = ChocolateBoilerPattern6.INSTANCE;
         ChocolateBoilerPattern6 instance2 = ChocolateBoilerPattern6.INSTANCE;
+        instance1.setBoiled(true);
 
         System.out.println(instance1.hashCode());
         System.out.println(instance2.hashCode());
+
+        if(instance1.isBoiled()) {
+            System.out.println("Chocolate is boiled");
+        }
     }
 }
