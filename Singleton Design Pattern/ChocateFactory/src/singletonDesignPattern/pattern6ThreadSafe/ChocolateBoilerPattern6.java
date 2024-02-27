@@ -7,6 +7,26 @@ package singletonDesignPattern.pattern6ThreadSafe;
 
 public enum ChocolateBoilerPattern6 {
     INSTANCE;
+    private boolean empty;
+    private boolean boiled;
+
+    private ChocolateBoilerPattern6() {}
+
+    public boolean isEmpty() {
+        return empty;
+    }
+
+    public boolean isBoiled() {
+        return boiled;
+    }
+
+    public void setEmpty(boolean empty) {
+        this.empty = empty;
+    }
+
+    public void setBoiled(boolean boiled) {
+        this.boiled = boiled;
+    }
 
     public String welcome() {
         return "Chocolate factory";
