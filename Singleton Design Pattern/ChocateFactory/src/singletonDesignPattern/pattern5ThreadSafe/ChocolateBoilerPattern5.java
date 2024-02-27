@@ -4,10 +4,11 @@ package singletonDesignPattern.pattern5ThreadSafe;
  * 1. Double-checked locking - use synchronised block
  * 2. After first initialization threads will not access the synchronised block
  * 3. This implementation can be broken by reflection in java
+ * 4. volatile - so to have visibility to all threads
  */
 
 public class ChocolateBoilerPattern5 {
-    private static ChocolateBoilerPattern5 instance;
+    private static volatile ChocolateBoilerPattern5 instance;
     private ChocolateBoilerPattern5() {}
 
     public static ChocolateBoilerPattern5 getInstance() {

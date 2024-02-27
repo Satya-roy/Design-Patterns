@@ -1,4 +1,3 @@
-import singletonDesignPattern.pattern3.ChocolateBoilerPattern3;
 import singletonDesignPattern.pattern5ThreadSafe.MyThread;
 import singletonDesignPattern.pattern6ThreadSafe.ChocolateBoilerPattern6;
 
@@ -10,7 +9,7 @@ import java.util.concurrent.Executors;
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-
+        // -------------------------- Singleton Design Pattern --------------------------
         //multi-threading
         ExecutorService executorService = null;
         MyThread myThread = new MyThread();
@@ -36,5 +35,6 @@ public class Main {
         if(instance1.isBoiled()) {
             System.out.println("Chocolate is boiled");
         }
+        //------------------------------------------------------------------------------
     }
 }
