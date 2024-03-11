@@ -1,4 +1,4 @@
-package simpleFactoryIdiom;
+package simpleFactoryIdiom.Pizza;
 
 import java.util.List;
 

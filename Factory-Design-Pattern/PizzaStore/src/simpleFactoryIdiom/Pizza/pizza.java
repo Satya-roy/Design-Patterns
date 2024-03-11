@@ -1,4 +1,4 @@
-package simpleFactoryIdiom;
+package simpleFactoryIdiom.Pizza;
 
 import javax.sound.midi.Soundbank;
 import java.util.List;
