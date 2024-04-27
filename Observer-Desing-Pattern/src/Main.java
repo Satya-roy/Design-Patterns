@@ -2,14 +2,23 @@
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        Observer firstSubscriber = new FirstMessageSubscriber();
+        Observer secondSubscriber = new SecondMessageSubscriber();
+        Observer thirdSubscriber = new ThirdMessageSubscriber();
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
-        }
+        Subject messagePublisher = new MessagePublisher();
+        messagePublisher.register(firstSubscriber);
+        messagePublisher.register(secondSubscriber);
+
+        Message message = new Message("subscribed to the subject");
+
+        messagePublisher.notifyUpdate(message);
+
+        System.out.println("----------------------------------------------");
+
+        messagePublisher.unregister(firstSubscriber);
+        messagePublisher.register(thirdSubscriber);
+
+        messagePublisher.notifyUpdate(message);
     }
 }
